@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+</head>
+
+<body>
+
+<p id="hotel_name"></p>
+<p id="rooms"></p>
+
+<script> 
+
+function Hotel (name,rooms,booked) {
+
+this.name = name;
+this.rooms = rooms;
+this.booked = booked;
+this.checkAvails = function() {
+
+return this.rooms - this.booked;
+
+  };
+}
+
+var hiltonHotel = new Hotel("Hilton", 100, 25);
+var starwoodHotel = new Hotel("Breezes", 250, 175);
+
+var details1 = hiltonHotel.name + " rooms: ";
+    details1 += hiltonHotel.checkAvails();
+var hotel1 = document.getElementById("hotel_name").innerHTML = details1;
+
+
+
+var details2 = starwoodHotel.name + " rooms: ";
+    details2 += starwoodHotel.checkAvails();
+var hotel2 = document.getElementById("rooms").innerHTML = details2;
+
+</script>
+
+
+	</body>
